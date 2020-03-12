@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React from "react";
 
-// import { Container } from './styles';
+const Comment = ({ c }) => {
+  let comment = "vazio";
 
-class Comment extends Component {
-  render() {
-    return (
-        <div>
-            Comentario: {this.props.c}
-        </div>
-    );
+  if (c && c.comment) {
+    comment = c.comment;
   }
-}
+
+  return <div>Comentario: {comment}</div>;
+};
 
 export default Comment;

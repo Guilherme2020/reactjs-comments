@@ -1,18 +1,17 @@
-import React, {Component} from 'react'
-import Comment from './Comment'
+import React from "react";
+import Comment from "./Comment";
+// pure-functions -> o resultado vai depender da injeção das props
 
-class Comments extends Component {
+const Comments = ({ comments }) => {
+  const keys = Object.keys(comments);
 
-    render(){
-        return(
-            <div>
-
-                {this.props.comments.map(c =>  <Comment c={c} /> )}
-
-            </div>   
-        )
-    }
-
-}
+  return (
+    <div>
+      {keys.map(key => (
+        <Comment key={key} c={comments[key]} />
+      ))}
+    </div>
+  );
+};
 
 export default Comments;
